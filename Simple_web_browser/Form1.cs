@@ -36,5 +36,37 @@ namespace Simple_web_browser
         {
             MessageBox.Show("Simple web browser based on .NET framework.\n by Kristian, 2017");
         }
+
+        /// <summary>
+        /// go to url from textbox
+        /// </summary>
+        private void NavigateToPageFromTextbox()
+        {
+            webBrowser1.Navigate(textBox1.Text);
+        }
+
+        /// <summary>
+        /// navigate button, make web browser goto URL in the textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NavigateToPageFromTextbox();
+        }
+
+        /// <summary>
+        /// run function evey time "enter" key is pressed and released    
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)ConsoleKey.Enter)
+            {                
+                NavigateToPageFromTextbox();
+                // button1_Click(null, null);     simulate button click
+            }
+        }
     }
-}
+}   
