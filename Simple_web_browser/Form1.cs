@@ -42,7 +42,10 @@ namespace Simple_web_browser
         /// </summary>
         private void NavigateToPageFromTextbox()
         {
+            button1.Enabled = false;         //don't use textbox and button while pag is loading
+            textBox1.Enabled = false;
             webBrowser1.Navigate(textBox1.Text);
+
         }
 
         /// <summary>
@@ -67,6 +70,17 @@ namespace Simple_web_browser
                 NavigateToPageFromTextbox();
                 // button1_Click(null, null);     simulate button click
             }
+        }
+
+        /// <summary>
+        /// enable button and txtbox when page is finished loading
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            button1.Enabled = true;
+            textBox1.Enabled = true;
         }
     }
 }   
