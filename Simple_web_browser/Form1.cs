@@ -45,6 +45,7 @@ namespace Simple_web_browser
             button1.Enabled = false;         //don't use textbox and button while pag is loading
             textBox1.Enabled = false;
             webBrowser1.Navigate(textBox1.Text);
+            toolStripStatusLabel1.Text = "";
 
         }
 
@@ -94,6 +95,11 @@ namespace Simple_web_browser
             {
                 toolStripProgressBar1.ProgressBar.Value = (int)(e.CurrentProgress / e.MaximumProgress) * 100;     //convert bytes loaded to percentage and display in progress bar
             }
+            if (e.CurrentProgress == e.MaximumProgress)
+            {
+                toolStripStatusLabel1.Text = ("Page finished loading");
+            }
+
         }
     }
 }   
