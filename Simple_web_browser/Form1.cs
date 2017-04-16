@@ -82,5 +82,10 @@ namespace Simple_web_browser
             button1.Enabled = true;
             textBox1.Enabled = true;
         }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }   
