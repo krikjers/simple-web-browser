@@ -16,7 +16,7 @@ namespace Simple_web_browser
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form1());               //sets up UI window
         }
     }
 }
