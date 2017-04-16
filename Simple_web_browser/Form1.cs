@@ -22,5 +22,19 @@ namespace Simple_web_browser
 
         }
 
+        /// <summary>
+        /// exits program when exit in menu bar clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Simple web browser based on .NET framework.\n by Kristian, 2017");
+        }
+    }
 }
