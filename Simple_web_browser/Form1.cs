@@ -74,7 +74,7 @@ namespace Simple_web_browser
         }
 
         /// <summary>
-        /// enable button and txtbox when page is finished loading
+        /// call when finished loading
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -83,6 +83,8 @@ namespace Simple_web_browser
             button1.Enabled = true;
             textBox1.Enabled = true;
             toolStripStatusLabel1.Text = "page finished loading";
+            textBox1.Text = webBrowser1.Url.ToString();
+            changeImages();
         }
 
         /// <summary>
@@ -100,6 +102,19 @@ namespace Simple_web_browser
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void changeImages()
+        {
+            foreach(HtmlElement image in webBrowser1.Document.Images)
+            {
+                if (image.GetAttribute("src") != "http://evelyngarone.files.wordpress.com/2012/01/little-cat.jpg")
+                {
+                    image.SetAttribute("src", "http://evelyngarone.files.wordpress.com/2012/01/little-cat.jpg");
+                }
+                
+            }
 
         }
     }
